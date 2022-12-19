@@ -1,5 +1,7 @@
 import json
 import os
+
+os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "1"
 import pygame
 import re
 import sys
@@ -462,6 +464,7 @@ for i in range(0, len(sys.argv)):
     arg = sys.argv[i]
     next_arg = sys.argv[i + 1] if i < len(sys.argv) - 1 else None
     if arg == "-h":
+        print()
         print("-b x: Fetches info every x seconds")
         print("-f x: Updates display every x seconds")
         print("-fps x: Sets the fps to x (Same as -f 1/x)")
@@ -469,6 +472,7 @@ for i in range(0, len(sys.argv)):
         print("-t x: Sets window title to x")
         print("-l: Activates logging")
         print("-d: Debug mode")
+        print()
         should_exit = True
         sys.exit()
     elif arg == "-b":
